@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'apps.noticias',
     'apps.contacto',
     'apps.comentarios',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -63,6 +63,7 @@ ROOT_URLCONF = 'emprenderChaco.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
         'DIRS': [os.path.join(os.path.dirname(BASE_DIR),'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
