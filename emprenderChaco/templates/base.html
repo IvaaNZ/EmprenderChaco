@@ -28,20 +28,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'index' %}">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'index' %}">Inicio</a></li>
                         {% if user.is_staff %}
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'noticias:crear_noticia' %}">CREAR NOTICIA</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'noticias:crear_noticia' %}">Añadir emprendimiento</a></li>
                         {% endif %}
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'nosotros' %}">NOSOTROS</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'noticias:listar_emprendimientos' %}">EMPRENDIMIENTOS</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'apps.contacto:contacto' %}">CONTACTO</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'nosotros' %}">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'noticias:listar_emprendimientos' %}">Emprendimientos</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'apps.contacto:contacto' %}">Contacto</a></li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         {% if user.is_authenticated %}
 
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">BIENVENIDO, {{user.username}}</a>
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Bienvenido, {{user.username}}</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{% url 'logout' %}">SALIR</a></li>
                             </ul>
@@ -57,8 +57,8 @@
                         
                         {% else %}
                         
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'login' %}">INICIAR SESIÓN</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'usuarios:registrar' %}">REGISTRARME</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'login' %}">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'usuarios:registrar' %}">Registrarme</a></li>
                         {% endif %}
                     </ul>
                 </div>
