@@ -99,7 +99,13 @@ body {
   line-height: var(--bs-body-line-height);
   color: #fefefe;
   text-align: var(--bs-body-text-align);
+<<<<<<< HEAD
   background: linear-gradient(292deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
+=======
+  background-color: var(--bs-breadcrumb-item-active-color);
+  background: rgb(0,0,0);
+  background: linear-gradient(178deg, rgb(216, 7, 7) 15%, rgba(48,66,96,1) 83%);
+>>>>>>> 7e5df2ceacfd6bd55281b4d4ac1134305aab02c5
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
@@ -241,7 +247,7 @@ dd {
 }
 
 blockquote {
-  margin: 0 0 1rem;
+  margin: 0 0 1rem
 }
 
 b,
