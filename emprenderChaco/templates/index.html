@@ -1,3 +1,48 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<main>
+    <header class="masthead" style="background-image: url('{% static 'img/home.jpg' %}')"></header>
+   <div class="video-container">
+       <iframe width="100%" height="550" src="{% static 'img/Presentacion.webm' %}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>
+</main>
+{% endblock %}
+
+{% block extra_style %}
+<style>
+    /* Estilos para hacer el video responsive */
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Proporción 16:9 */
+        margin: 20px auto; /* Opcional: Agrega margen alrededor del video */
+        max-width: 800px; /* Limita el ancho del video para pantallas muy grandes */
+    }
+
+    .video-iframe {
+        width: 100%;
+        height: 100%;
+        border: none; /* Elimina el borde del iframe */
+    }
+
+    /* Estilos adicionales para centrar el contenido */
+    .center-content {
+        text-align: center;
+    }
+
+    /* Estilos para asegurar responsividad */
+    @media screen and (max-width: 600px) {
+        .video-container {
+            padding-bottom: 75%; /* Cambia la proporción en pantallas más pequeñas */
+        }
+    }
+</style>
+{% endblock %}
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -53,6 +98,11 @@
             padding-bottom: 75%; /* Cambia la proporción en pantallas más pequeñas */
         }
     }
+<<<<<<< HEAD
 </style> -->
 
 
+=======
+</style>
+{% endblock %}
+>>>>>>> 9c06681d40b9d6f14b0e1d4f400bfea11e19c4bc
