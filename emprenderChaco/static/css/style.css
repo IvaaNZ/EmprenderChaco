@@ -103,22 +103,7 @@ body {
   background: rgb(0,0,0);
   background: linear-gradient(178deg, rgba(0,0,0,1) 15%, rgba(48,66,96,1) 83%);
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-
-
-
-
-.main-content {
-  min-height: calc(100vh - 250px); /* Ajusta el valor 250px según tus necesidades */
-}
-
-/* Si prefieres, puedes centrar el contenido verticalmente cuando hay menos contenido */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 
@@ -10724,7 +10709,6 @@ header.masthead {
   padding-top: calc(3rem + 57px);
   padding-bottom: 3rem;
   background: no-repeat center center;
-  background-color: #6c757d;
   background-size: cover;
   background-attachment: scroll;
 }
