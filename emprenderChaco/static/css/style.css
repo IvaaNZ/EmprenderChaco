@@ -97,7 +97,7 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: #000;
+  color: #fefefe;
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-breadcrumb-item-active-color);
   background: rgb(0,0,0);
@@ -130,7 +130,6 @@ h6, .h6{
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: normal;
   line-height: 1.1;
- 
 }
 
 h5, .h5{
@@ -278,7 +277,7 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
+  color: var(--bs-accordion-bg);
   text-decoration: none;
 }
 a:hover {
