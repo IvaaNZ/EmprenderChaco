@@ -4,24 +4,27 @@
 {% block contenido %}
 <center>
     {% if user.is_authenticated %}
-    <form method="POST" style="margin: 200;">
-        <h1>Formulario de contacto</h1>
+    <form method="POST" style="max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center;">Formulario de contacto</h1>
         <br>
         {% if messages %}
             {% for message in messages %}
-                <div class="message {{ message.tags }}"> {{message}} </div>
+                <div class="message {{ message.tags }}" style="color: green; font-weight: bold; padding: 10px; text-align: center;"> {{message}} </div>
             {% endfor %}
         {% endif %}
-        <table>
+        <table style="width: 100%;">
             {% csrf_token %}
-            {{ form }}
+            {{ form.as_table }}
         </table>
-        <input type="submit" value="Contactar">
+        <div style="text-align: center;">
+            <input type="submit" value="Contactar" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+        </div>
     </form>
     {% else %}
         <p>Solo los usuarios registrados pueden contactar.</p>
-        <p>Debes <a href="{% url 'login' %}">Iniciar sesión</a> para contactar.</p>
-        <p>¿No tienes una cuenta? <a href="{% url 'usuarios:registrar' %}">Regístrate</a></p>
+        <p>Debes <a href="{% url 'login' %}" style="color: #007bff; text-decoration: underline;">Iniciar sesión</a> para contactar.</p>
+        <p>¿No tienes una cuenta? <a href="{% url 'usuarios:registrar' %}" style="color: #007bff; text-decoration: underline;">Regístrate</a></p>
     {% endif %}
 </center>
+
 {% endblock %}
