@@ -4,15 +4,14 @@
 {% block contenido %}
 
 <main>
+    <header class="masthead" style="background-image: url('{% static 'img/home.jpg' %}')"></header>
    <div class="video-container">
        <iframe width="100%" height="550" src="{% static 'img/Presentacion.webm' %}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
 </main>
-
 {% endblock %}
 
 {% block extra_style %}
-
 <style>
     /* Estilos para hacer el video responsive */
     .video-container {
@@ -41,5 +40,5 @@
         }
     }
 </style>
-
 {% endblock %}
+

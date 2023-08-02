@@ -1,21 +1,122 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block contenido %}
-<center>
-	<form method="POST">{%csrf_token%}
-		{{form.errors}}
-		<div>
-			<input type="text" name="username" placeholder="USUARIO">
-			<input type="password" name="password" placeholder="PASSWORD">
-		</div>
-		
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+J0GNOFii4k5b4fHYt4V2RkhHQlpDzg05trj5LYbWpD9im3" crossorigin="anonymous">
+  
+  <style>
+    /* Personaliza estilos adicionales si lo deseas */
+    body {
+      background-color: #f8f9fa;
+    }
 
-		<input type="submit" name="" value="Ingresar">
-		<div>
-			<p>¿No tienes una cuenta? <a href="{% url 'usuarios:registrar' %}">Regístrate</a></p>
-		</div>
-	</form>
-</center>
+    .custom-login {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: linear-gradient(292deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
+      box-shadow: inset 0 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
 
-			
+    .custom-login h2 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      background: rgb(255 255 255 / 20%); /* Soporte para navegadores basados en WebKit (Safari, Chrome) */
+      z-index: 1;
+      position: relative;
+    }
+
+    .custom-login h2::before {
+      content: "";
+      position: absolute;
+      top: -10px; /* Ajustar el valor para alinear el contorno */
+      left: -10px; /* Ajustar el valor para alinear el contorno */
+      right: -10px; /* Ajustar el valor para alinear el contorno */
+      bottom: -10px; /* Ajustar el valor para alinear el contorno */
+      z-index: -1; /* Enviar el pseudo-elemento detrás del texto */
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px; /* Ajustar el valor para redondear el contorno */
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px); /* Soporte para navegadores basados en WebKit (Safari, Chrome) */
+    }
+
+    .form-group {
+      margin-bottom: 30px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #007bff;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .signup-link a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="custom-login">
+          <h2 class="text-center mb-4">Iniciar sesión</h2>
+          <form id="login-form" method="POST">{% csrf_token %}
+            {{ form.errors }}
+            <div class="form-group mb-3">
+              <label for="username" class="form-label">Usuario</label>
+              <input type="text" name="username" id="username" class="form-control" placeholder="Usuario">
+            </div>
+            <div class="form-group mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
+            </div>
+            <div class="d-grid">
+              <input type="submit" value="Ingresar" class="btn btn-primary">
+            </div>
+          </form>
+          <div class="signup-link mt-3">
+            ¿No tienes una cuenta? <a href="{% url 'usuarios:registrar' %}">Regístrate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
