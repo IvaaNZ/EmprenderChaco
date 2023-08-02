@@ -100,8 +100,6 @@ body {
   color: #fefefe;
   text-align: var(--bs-body-text-align);
   background: linear-gradient(292deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
-
-  background-color: var(--bs-breadcrumb-item-active-color);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
@@ -243,7 +241,7 @@ dd {
 }
 
 blockquote {
-  margin: 0 0 1rem
+  margin: 0 0 1rem;
 }
 
 b,
@@ -10718,6 +10716,7 @@ header.masthead:before {
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: #212529;
   opacity: 0.5;
 }
 header.masthead .page-heading,
