@@ -1,33 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block contenido %}
-<main>
-   
-
-   <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="post-heading">
-                    <h1>"Un emprendedor debe explorar, y esto es el espíritu emprendedor en su máxima expresión. </h1>
-                    <h2 class="subheading">Los desafíos lucen mucho más pequeños desde la perspectiva de la perseverancia y la creatividad."</h2>
-                    <span class="meta">
-                        Publicado por
-                        <a href="#!">Emprender Chaco</a>
-                        en Agosto 3, 2023.
-                    </span>
-                </div>
-                
-            </div>
-            <div class="video-container">
-                <iframe width="100%" height="550" src="{% static 'img/Presentacion.webm' %}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-    
-</main>
-{% endblock %}
-
 {% block extra_style %}
 <style>
     /* Estilos para hacer el video responsive */
@@ -56,5 +29,79 @@
             padding-bottom: 75%; /* Cambia la proporción en pantallas más pequeñas */
         }
     }
+
+    /* Estilos para el cuadro distintivo de cada elemento */
+    .item-box {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 0px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilos para resaltar las noticias destacadas */
+    .item-box.destacada {
+        background-color: #FFFACD; /* Fondo de color amarillo claro para noticias destacadas */
+        border: 2px solid #FFD700; /* Borde de color dorado para noticias destacadas */
+    }
+
+    /* Estilos para el cuadro de categoría */
+    .categoria-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 12px;
+        background-color: #8500ff; /* Color de fondo para el cuadro de categoría */
+        color: #fff; /* Color del texto dentro del cuadro de categoría */
+        border-radius: 4px;
+    }
 </style>
+{% endblock %}
+
+{% block contenido %}
+<main>
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1>"Un emprendedor debe explorar, y esto es el espíritu emprendedor en su máxima expresión. </h1>
+                    <h2 class="subheading">Los desafíos lucen mucho más pequeños desde la perspectiva de la perseverancia y la creatividad."</h2>
+                    <span class="meta">
+                        Publicado por
+                        <a href="#!">Emprender Chaco</a>
+                        en Agosto 3, 2023.
+                    </span>
+                </div>
+            </div>
+            <div class="video-container">
+                <iframe width="100%" height="550" src="{% static 'img/Presentacion.webm' %}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
+        <h2>Últimas noticias</h2>
+        <hr>
+        <div class="row">
+            {% for noticia in noticias %}
+            <div class="col-md-4">
+                <a href="{% url 'noticias:detalle_noticias' noticia.pk %}">
+                    {% if noticia.destacada %}
+                    <!-- Agrega una clase para las noticias destacadas -->
+                    <div class="item-box destacada">
+                    {% else %}
+                    <div class="item-box">
+                    {% endif %}
+                        <h4><span class="categoria-badge">{{ noticia.categoria }}</span></h4>
+                        <h2>{{ noticia.titulo }}</h2>
+                        <img src="{{ noticia.imagen.url }}" width="200">
+                        <h3>De: {{ noticia.autor }}</h3>
+                        <h4>Subido: {{ noticia.creado }}</h4>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
 {% endblock %}
