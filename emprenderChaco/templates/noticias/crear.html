@@ -2,12 +2,96 @@
 {% load static %}
 {% block contenido %}
 
+<style>
+    /* Personaliza estilos adicionales si lo deseas */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .custom-form {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: linear-gradient(292deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
+      box-shadow: inset 0 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .custom-form h3 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      background: rgb(255 255 255 / 20%);
+      z-index: 1;
+      position: relative;
+    }
+
+    .custom-form h3::before {
+      content: "";
+      position: absolute;
+      top: -10px; /* Ajustar el valor para alinear el contorno */
+      left: -10px; /* Ajustar el valor para alinear el contorno */
+      right: -10px; /* Ajustar el valor para alinear el contorno */
+      bottom: -10px; /* Ajustar el valor para alinear el contorno */
+      z-index: -1; /* Enviar el pseudo-elemento detrás del texto */
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px; /* Ajustar el valor para redondear el contorno */
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .form-group {
+      margin-bottom: 30px;
+    }
+    
+    input[type="text"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="text"]:focus,
+    input[type="file"]:focus,
+    textarea:focus {
+      border-color: #007bff;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+</style>
+
 <main role="main">
   <div class="container">
     <div class="row mt-3">
       <div class="col-md-9 mx-auto mb-5">
-        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}         
-         <h3 class="mb-4">CREAR NOTICIA</h3>
+        <form class="custom-form" action="" method="post" enctype="multipart/form-data">{% csrf_token %}         
+         <h3>CREAR NOTICIA</h3>
           {{form.as_p}}
           <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
         </form>

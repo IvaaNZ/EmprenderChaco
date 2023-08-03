@@ -2,28 +2,138 @@
 {% load static %}
 
 {% block contenido %}
+<style>
+    /* Personaliza estilos adicionales si lo deseas */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .custom-form {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: linear-gradient(292deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
+      box-shadow: inset 0 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .custom-form h1 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      background: rgb(255 255 255 / 20%);
+      z-index: 1;
+      position: relative;
+    }
+
+    .custom-form h1::before {
+      content: "";
+      position: absolute;
+      top: -10px; /* Ajustar el valor para alinear el contorno */
+      left: -10px; /* Ajustar el valor para alinear el contorno */
+      right: -10px; /* Ajustar el valor para alinear el contorno */
+      bottom: -10px; /* Ajustar el valor para alinear el contorno */
+      z-index: -1; /* Enviar el pseudo-elemento detrás del texto */
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px; /* Ajustar el valor para redondear el contorno */
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .form-group {
+      margin-bottom: 30px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #007bff;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .signup-link a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+</style>
+
 <center>
     {% if user.is_authenticated %}
-    <form method="POST" style="max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <h1 style="text-align: center;">Formulario de contacto</h1>
+    <form class="custom-form" method="POST">
+        {% csrf_token %}
+        <h1>Formulario de contacto</h1>
         <br>
         {% if messages %}
             {% for message in messages %}
-                <div class="message {{ message.tags }}" style="color: green; font-weight: bold; padding: 10px; text-align: center;"> {{message}} </div>
+                <div class="message {{ message.tags }}">{{ message }}</div>
+                
             {% endfor %}
         {% endif %}
-        <table style="width: 100%;">
-            {% csrf_token %}
-            {{ form.as_table }}
-        </table>
-        <div style="text-align: center;">
-            <input type="submit" value="Contactar" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+
+        <div class="form-group">
+            <label for="{{ form.nombre_apellido.id_for_label }}">Nombre y Apellido:</label>
+            {{ form.nombre_apellido }}
+          </div>
+
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.asunto.id_for_label }}">Asunto:</label>
+            {{ form.asunto }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.mensaje.id_for_label }}">Mensaje:</label>
+            {{ form.mensaje }}
+        </div>
+
+        <div>
+            <input type="submit" value="Contactar">
         </div>
     </form>
     {% else %}
         <p>Solo los usuarios registrados pueden contactar.</p>
-        <p>Debes <a href="{% url 'login' %}" style="color: #007bff; text-decoration: underline;">Iniciar sesión</a> para contactar.</p>
-        <p>¿No tienes una cuenta? <a href="{% url 'usuarios:registrar' %}" style="color: #007bff; text-decoration: underline;">Regístrate</a></p>
+        <p>Debes <a href="{% url 'login' %}">Iniciar sesión</a> para contactar.</p>
+        <p>¿No tienes una cuenta? <a href="{% url 'usuarios:registrar' %}">Regístrate</a></p>
     {% endif %}
 </center>
 

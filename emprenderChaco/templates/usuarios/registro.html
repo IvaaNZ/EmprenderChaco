@@ -2,51 +2,46 @@
 {% load static %}
 
 {% block contenido %}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+J0GNOFii4k5b4fHYt4V2RkhHQlpDzg05trj5LYbWpD9im3" crossorigin="anonymous">
-
-  <style>
-    
+<style>
+    /* Estilos adicionales para el formulario de registro */
     .custom-form {
-    /* Estilos para el contenedor del formulario */
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    position: relative;
-  }
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      position: relative;
+    }
 
-  .custom-form h3::before {
-    /* Estilos para el contorno del título */
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    z-index: -1;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  }
+    .custom-form h3::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      z-index: -1;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
 
     .custom-form h3 {
-    /* Estilos para el título del formulario */
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    position: relative;
-    padding: 10px 0;
-    margin-bottom: 30px;
-  }
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      position: relative;
+      padding: 10px 0;
+      margin-bottom: 30px;
+    }
 
     .custom-form .form-group {
       margin-bottom: 20px;
@@ -106,49 +101,47 @@
       text-decoration: none;
       font-weight: bold;
     }
-  </style>
+</style>
 
-  <center>
-    <main role="main">
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 col-sm-8">
-          <div class="custom-form">
-            <h3 class="mb-4">Registro</h3>
-              <form action="" method="post">{% csrf_token %}         
-                <div class="form-group mb-3">
-                  <label for="first_name" class="form-label">Nombre</label>
-                  <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Ingresa tu nombre">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="last_name" class="form-label">Apellido</label>
-                  <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Ingresa tu apellido">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="username" class="form-label">Nombre de usuario</label>
-                  <input type="text" name="username" id="username" class="form-control" placeholder="Ingresa tu nombre de usuario">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="email" class="form-label">Correo</label>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="password1" class="form-label">Contraseña</label>
-                  <input type="password" name="password1" id="password1" class="form-control" placeholder="Ingresa tu contraseña">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="password2" class="form-label">Confirmar contraseña</label>
-                  <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirma tu contraseña">
-                </div>
-                <div class="d-grid">
-                  <input type="submit" class="btn btn-primary" value="Confirmar">
-                </div>
-              </form>
+<center>
+  <main role="main">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="custom-form">
+          <h3 class="mb-4">Registro</h3>
+          <form action="" method="post">{% csrf_token %}
+            <div class="form-group mb-3">
+              <label for="first_name" class="form-label">Nombre</label>
+              <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Ingresa tu nombre">
             </div>
-          </div>
+            <div class="form-group mb-3">
+              <label for="last_name" class="form-label">Apellido</label>
+              <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Ingresa tu apellido">
+            </div>
+            <div class="form-group mb-3">
+              <label for="username" class="form-label">Nombre de usuario</label>
+              <input type="text" name="username" id="username" class="form-control" placeholder="Ingresa tu nombre de usuario">
+            </div>
+            <div class="form-group mb-3">
+              <label for="email" class="form-label">Correo</label>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico">
+            </div>
+            <div class="form-group mb-3">
+              <label for="password1" class="form-label">Contraseña</label>
+              <input type="password" name="password1" id="password1" class="form-control" placeholder="Ingresa tu contraseña">
+            </div>
+            <div class="form-group mb-3">
+              <label for="password2" class="form-label">Confirmar contraseña</label>
+              <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirma tu contraseña">
+            </div>
+            <div class="d-grid">
+              <input type="submit" class="btn btn-primary" value="Confirmar">
+            </div>
+          </form>
         </div>
       </div>
-      
-    </main>
-  </center>
+    </div>
+  </main>
+</center>
 
 {% endblock contenido %}
