@@ -1,65 +1,90 @@
 {% extends 'base.html' %}
 
-
 {% block contenido %}
 <style>
   li {
     list-style: none;
   }
+
+  /* Estilos para el cuadro de categoría */
+  .categoria-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+}
+
+
+  /* Estilos para el cuadro distintivo de cada elemento */
+  .item-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 0px 20px rgba(0, 0, 0, 0.1);
+  }
 </style>
+
 <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-3">
-        <h4>Categorias</h4>
-            <a href="?fl=todas">TODAS</a><br>
-            {% for c in categorias %}
-              <a href="?fl={{c.nombre}}">{{c.nombre}}</a><br>
-            {% endfor %}
-        <hr>
-        <ul>
-          <span>A-Z</span>
-          <li><a href="?orden=ala"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
-            <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
-          </svg></a></li>
-          <li><a href="?orden=ald"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
-            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"/>
-          </svg></a></li>
-        </ul>
-        <ul>
-          <span>Fecha</span>
-          <li><a href="?orden=ana"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
-            <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
-          </svg></a></li>
-          <li><a href="?orden=and"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
-            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"/>
-          </svg></a></li>
-        </ul>
-      </div>
-      <div class="col-md-9 mx-auto mb-5">
-      	<div class="row">
+  <div class="row mt-3">
+    <div class="col-md-3">
+      <h4>Categorias</h4>
+      <a href="?fl=todas">TODAS</a><br>
+      {% for c in categorias %}
+        <a href="?fl={{c.nombre}}">{{c.nombre}}</a><br>
+      {% endfor %}
+      <hr>
+      <ul>
+        <span>A-Z</span>
+        <li><a href="?orden=ala"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+              <!-- ... Código para el orden A-Z ... -->
+            </svg></a></li>
+        <li><a href="?orden=ald"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+              <!-- ... Código para el orden Z-A ... -->
+            </svg></a></li>
+      </ul>
+      <ul>
+        <span>Fecha</span>
+        <li><a href="?orden=ana"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+              <!-- ... Código para el orden ascendente por fecha ... -->
+            </svg></a></li>
+        <li><a href="?orden=and"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+              <!-- ... Código para el orden descendente por fecha ... -->
+            </svg></a></li>
+      </ul>
+    </div>
+    <div class="col-md-9 mx-auto mb-5">
+      <div class="row">
         {% if error %}
-            <div class="alert alert-danger">
-              {{error}}
-            </div>
+          <div class="alert alert-danger">
+            {{error}}
+          </div>
         {% else %}
-        	{% for n in object_list %}
-        		<div class="col-md-4">
+          {% for n in object_list %}
+            <div class="col-md-4">
               <a href="{% url 'noticias:detalle_noticias' n.pk %}">
-        			<h4>{{n.categoria}}</h4>
-        			<h2>{{n.titulo}}</h2>
-        			
-        			<img src="{{n.imagen.url}}" width="200">
-        			<h3>De: {{n.autor}}</h3>
-              <h4>Subido: {{n.creado}}</h4>
-              
-        			<hr>
-					</a>
-					</div>
-				  {% endfor %}
-		    {% endif %}
-		</div>
-		</div>
-		</div>
+                <div class="item-box">  <!-- Agregamos el cuadro distintivo aquí -->
+                  <h4><span class="categoria-badge">{{n.categoria}}</span></h4>
+                  <h2>{{n.titulo}}</h2>
+                  
+                  <img src="{{n.imagen.url}}" width="200">
+                  <h3>Publicado por:</h3>
+                  <h4>{{n.autor}}</h4>
+                  <h3>Subido:</h3>
+                  <h4>{{n.creado}}</h4>
+                  
+                  <hr>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
   </div>
+</div>
 
 {% endblock contenido %}

@@ -14,8 +14,8 @@
       padding: 30px;
       border: 1px solid #ddd;
       border-radius: 5px;
-      background: linear-gradient(292deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
-      box-shadow: inset 0 0 10px 20px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(1deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 30%, rgba(0,212,255,1) 60%, rgba(9,9,121,1) 90%, rgba(2,0,36,1) 100%);
+      box-shadow: 0 0 0px 20px rgba(0, 0, 0, 0.1);
       position: relative;
     }
 
@@ -95,7 +95,7 @@
 
 <center>
     {% if user.is_authenticated %}
-    <form class="custom-form" method="POST">
+    <form class="custom-form mb-5" method="POST">
         {% csrf_token %}
         <h1>Formulario de contacto</h1>
         <br>
@@ -109,7 +109,7 @@
         <div class="form-group">
             <label for="{{ form.nombre_apellido.id_for_label }}">Nombre y Apellido:</label>
             {{ form.nombre_apellido }}
-          </div>
+        </div>
 
         <div class="form-group">
             <label for="{{ form.email.id_for_label }}">Email:</label>
@@ -131,9 +131,12 @@
         </div>
     </form>
     {% else %}
+    <img src="{% static 'img/Chacoedit.png' %}" width="200" height="200">
+    <div style="text-align: center;">
         <p>Solo los usuarios registrados pueden contactar.</p>
         <p>Debes <a href="{% url 'login' %}">Iniciar sesión</a> para contactar.</p>
         <p>¿No tienes una cuenta? <a href="{% url 'usuarios:registrar' %}">Regístrate</a></p>
+    </div>
     {% endif %}
 </center>
 
