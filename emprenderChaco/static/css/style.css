@@ -273,11 +273,11 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
+  color: #0d6efd;
   text-decoration: none;
 }
 a:hover {
-  color: var(--bs-link-hover-color);
+  color: var(--bs-accordion-active-bg);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -6894,7 +6894,7 @@ textarea.form-control-lg {
 }
 
 .border-top {
-  border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  border-top: transparent;
 }
 
 .border-top-0 {
@@ -10585,7 +10585,7 @@ textarea.form-control-lg {
   }
 }
 body {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 hr {
@@ -10677,7 +10677,7 @@ blockquote {
   #mainNav.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
-    top: -83px;
+    top: -129px;
     transition: transform 0.2s;
     border-bottom: 1px solid white;
     background-color: rgba(255, 255, 255, 0.9);
@@ -10701,15 +10701,15 @@ blockquote {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 header.masthead {
   position: relative;
   margin-bottom: 20px;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background: no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
@@ -10773,8 +10773,8 @@ header.masthead .post-heading .meta a {
 }
 @media (min-width: 992px) {
   header.masthead {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
   }
   header.masthead .page-heading h1, header.masthead .page-heading .h1,
   header.masthead .site-heading h1,
