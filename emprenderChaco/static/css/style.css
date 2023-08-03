@@ -273,11 +273,11 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
+  color: #0d6efd;
   text-decoration: none;
 }
 a:hover {
-  color: var(--bs-link-hover-color);
+  color: var(--bs-accordion-active-bg);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -6894,7 +6894,7 @@ textarea.form-control-lg {
 }
 
 .border-top {
-  border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  border-top: transparent;
 }
 
 .border-top-0 {
@@ -10696,8 +10696,8 @@ blockquote {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 header.masthead {
