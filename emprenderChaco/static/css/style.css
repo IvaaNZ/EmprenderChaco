@@ -4147,7 +4147,7 @@ textarea.form-control-lg {
 .card-body {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-  color: var(--bs-card-color);
+  color: black;
 }
 
 .card-title {
@@ -8023,6 +8023,11 @@ textarea.form-control-lg {
 
 .rounded-pill {
   border-radius: var(--bs-border-radius-pill) !important;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: rgb(255 255 255 / 20%);
 }
 
 .rounded-top {
