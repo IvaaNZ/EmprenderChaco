@@ -11,46 +11,25 @@
         margin: 0;
         padding: 0;
       }
-      .video-container {
-        position: relative;
-        width: 100%;
-        padding-top: 56.2500%;
-        box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
-        margin-top: 1.6em;
-        margin-bottom: 0.9em;
-        overflow: hidden;
-        border-radius: 8px;
-        will-change: transform;
-      }
-      .video-container iframe {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        border: none;
-        padding: 0;
-        margin: 0;
-      }
-      /* Nuevos estilos para la imagen */
       .image-container {
-        margin-top: 1.6em;
-        margin-bottom: 0.9em;
-        border-radius: 8px;
-        overflow: hidden;
+        /* Estilo para centrar la imagen */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ajusta la altura del contenedor a la altura de la pantalla */
       }
       .image-container img {
-        width: 100%;
+        /* Ajusta el tamaño de la imagen a un valor más pequeño */
+        max-width: 100%; /* Puedes ajustar el porcentaje según tu preferencia */
         height: auto;
       }
     </style>
 </head>
 <body>
-  <!-- Agregar la imagen .gif -->
   <div class="image-container">
-    <img src="{% static 'img/integrantesgif.gif' %}" alt="GIF animado" style="width: 100%; height: auto;">
+    <img src="{% static 'img/integrantesgif.gif' %}" alt="GIF animado">
   </div>
-</body>
+ </body>
 </html>
 
 {% endblock %}
