@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block contenido %}
 <!DOCTYPE html>
 <html>
@@ -32,13 +32,24 @@
         padding: 0;
         margin: 0;
       }
+      /* Nuevos estilos para la imagen */
+      .image-container {
+        margin-top: 1.6em;
+        margin-bottom: 0.9em;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .image-container img {
+        width: 100%;
+        height: auto;
+      }
     </style>
 </head>
 <body>
-    <div class="video-container">
-        <iframe loading="lazy" src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFp9MHnQc8&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
-    </div>
-    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFp9MHnQc8&#x2F;view?utm_content=DAFp9MHnQc8&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
+  <!-- Agregar la imagen .gif -->
+  <div class="image-container">
+    <img src="{% static 'img/integrantesgif.gif' %}" alt="GIF animado" style="width: 100%; height: auto;">
+  </div>
 </body>
 </html>
 
