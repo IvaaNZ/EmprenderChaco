@@ -30,5 +30,5 @@ _Grupo 5 Informatorio 2023_
 
 ## Expresiones de Gratitud 🎁
 
-*A todo el equipo de INFORMATORIO 2022 📢
+*A todo el equipo de INFORMATORIO 2023 📢
 *Especialmente a nuestra Profesora: Nicolas Tortosa y a nuestras Mentoras: Marina Braunschweig y Vanesa Ferreyra**.
