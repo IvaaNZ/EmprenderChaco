@@ -3,34 +3,7 @@
 
 {% block extra_style %}
 <style>
-    /* Estilos para hacer el video responsive */
-    .video-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* Proporción 16:9 */
-        margin: 20px auto; /* Opcional: Agrega margen alrededor del video */
-        max-width: 800px; /* Limita el ancho del video para pantallas muy grandes */
-    }
-
-    .video-iframe {
-        width: 100%;
-        height: 100%;
-        border: none; /* Elimina el borde del iframe */
-    }
-
-    /* Estilos adicionales para centrar el contenido */
-    .center-content {
-        text-align: center;
-    }
-
-    /* Estilos para asegurar responsividad */
-    @media screen and (max-width: 600px) {
-        .video-container {
-            padding-bottom: 75%; /* Cambia la proporción en pantallas más pequeñas */
-        }
-    }
-
-    /* Estilos para el cuadro distintivo de cada elemento */
+    
     .item-box {
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -39,22 +12,6 @@
         box-shadow: 0 0 0px 20px rgba(0, 0, 0, 0.1);
     }
 
-    /* Estilos para resaltar las noticias destacadas */
-    .item-box.destacada {
-        background-color: #FFFACD; /* Fondo de color amarillo claro para noticias destacadas */
-        border: 2px solid #FFD700; /* Borde de color dorado para noticias destacadas */
-    }
-
-    /* Estilos para el cuadro de categoría */
-    .categoria-badge {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 6px 12px;
-        background-color: #8500ff; /* Color de fondo para el cuadro de categoría */
-        color: #fff; /* Color del texto dentro del cuadro de categoría */
-        border-radius: 4px;
-    }
 </style>
 {% endblock %}
 
